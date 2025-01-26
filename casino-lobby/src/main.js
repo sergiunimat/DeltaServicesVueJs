@@ -3,13 +3,15 @@ import App from './App.vue'
 import {createRouter, createWebHistory} from "vue-router";
 import HomePage from "@/components/HomePage/HomePage.vue";
 import GameInstance from "@/components/Game/GameInstance.vue";
+import './index.css';
+import {Path} from "@/constants/routes";
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {path: '/', component: HomePage},
-        {path: '/home', component: HomePage},
-        {path: '/game/:gameId', component: GameInstance},
+        {path: Path.empty, component: HomePage},
+        {path: Path.home, component: HomePage},
+        {path: `${Path.game}/:gameId`, component: GameInstance},
     ]
 })
 
